@@ -1,0 +1,158 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --font-sans: var(--cadence-font-sans);
+  --font-serif: var(--cadence-font-serif);
+}
+
+:root {
+  --cadence-deep-space-blue: #00263e;
+  --cadence-carbon-black: #1e1e1e;
+  --cadence-yale-blue: #063c5e;
+  --cadence-baltic-blue: #276287;
+  --cadence-bright-snow: #faf9f7;
+  --cadence-parchment: #f3f0ec;
+  --cadence-khaki-beige: #b8a89a;
+  --cadence-taupe: #8f8174;
+  --cadence-muted-teal: #8fa89b;
+  --cadence-jungle-teal: #6f8f82;
+  --cadence-toasted-almond: #c28e74;
+  --cadence-cinnamon-wood: #a46e55;
+  --cadence-blushed-brick: #b8504d;
+  --cadence-smoky-rose: #7c616c;
+  --cadence-brilliant-azure: #0085d9;
+  --cadence-light-copper: #b38d7c;
+  --cadence-rose-pink: #da5697;
+  --cadence-inverse: #ffffff;
+
+  --cadence-font-sans-app: var(--font-inter);
+  --cadence-font-sans-marketing: var(--font-fira);
+  --cadence-font-sans: var(--cadence-font-sans-app);
+  --cadence-font-serif: 'IBM Plex Serif', serif;
+
+  --cadence-type-h1-size: 44px;
+  --cadence-type-h1-line: 52px;
+  --cadence-type-h1-weight: 600;
+  --cadence-type-h2-size: 30px;
+  --cadence-type-h2-line: 38px;
+  --cadence-type-h2-weight: 600;
+  --cadence-type-body-size: 16px;
+  --cadence-type-body-line: 24px;
+  --cadence-type-body-weight: 400;
+  --cadence-type-meta-size: 13px;
+  --cadence-type-meta-line: 20px;
+  --cadence-type-meta-weight: 400;
+
+  --surface-primary: var(--cadence-bright-snow);
+  --surface-secondary: var(--cadence-parchment);
+  --surface-container: var(--cadence-khaki-beige);
+
+  --text-heading: var(--cadence-deep-space-blue);
+  --text-primary: var(--cadence-carbon-black);
+  --text-secondary: var(--cadence-taupe);
+  --text-link: var(--cadence-brilliant-azure);
+  --text-inverse: var(--cadence-inverse);
+
+  --brand-primary: var(--cadence-deep-space-blue);
+  --brand-secondary: var(--cadence-light-copper);
+  --brand-accent: var(--cadence-rose-pink);
+  --status-success: var(--cadence-muted-teal);
+  --status-warning: var(--cadence-cinnamon-wood);
+  --status-error: var(--cadence-blushed-brick);
+
+  --focus-ring-color: var(--cadence-baltic-blue);
+
+  --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.08);
+
+  --radius: 8px;
+
+  --background: var(--surface-primary);
+  --foreground: var(--text-primary);
+  --card: var(--surface-primary);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface-primary);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--text-inverse);
+  --secondary: var(--surface-secondary);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--surface-secondary);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--surface-secondary);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--status-error);
+  --border: color-mix(in oklab, var(--surface-secondary), var(--text-primary) 12%);
+  --input: color-mix(in oklab, var(--surface-secondary), var(--text-primary) 10%);
+  --ring: var(--focus-ring-color);
+}
+
+[data-cadence-surface="marketing"] {
+  --cadence-font-sans: var(--cadence-font-sans-marketing);
+}
+
+[data-marketing="true"] {
+  --cadence-font-sans-marketing: var(--font-source-sans);
+  --cadence-font-sans: var(--cadence-font-sans-marketing);
+  --marketing-card-bg: #ebeae9;
+  --marketing-card-border: color-mix(in oklab, #7c797a 45%, transparent);
+  --marketing-card-icon-bg: color-mix(in oklab, #da5697 14%, #ffffff);
+  --marketing-card-icon-color: #da5697;
+
+  --chip-gray-text: #7c797a;
+  --chip-gray-bg: color-mix(in oklab, #7c797a 20%, #ffffff);
+  --chip-gray-border: color-mix(in oklab, #7c797a 35%, transparent);
+
+  --chip-green-text: #669689;
+  --chip-green-bg: color-mix(in oklab, #7c9a92 20%, #ffffff);
+  --chip-green-border: color-mix(in oklab, #7c9a92 35%, transparent);
+
+  --chip-mauve-text: #987284;
+  --chip-mauve-bg: color-mix(in oklab, #b38d7c 20%, #ffffff);
+  --chip-mauve-border: color-mix(in oklab, #b38d7c 35%, transparent);
+
+  --chip-blue-text: #076fb1;
+  --chip-blue-bg: color-mix(in oklab, #0d69a4 20%, #ffffff);
+  --chip-blue-border: color-mix(in oklab, #497692 35%, transparent);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@import '../styles/cadence.type.css';
+@import '../styles/cadence.components.css';

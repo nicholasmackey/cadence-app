@@ -1,0 +1,152 @@
+@layer utilities {
+  .cd-h1 {
+    font-size: var(--cadence-type-h1-size);
+    line-height: var(--cadence-type-h1-line);
+    font-weight: var(--cadence-type-h1-weight);
+    letter-spacing: -0.015em;
+    color: var(--text-heading);
+  }
+
+  .cd-h2 {
+    font-size: var(--cadence-type-h2-size);
+    line-height: var(--cadence-type-h2-line);
+    font-weight: var(--cadence-type-h2-weight);
+    letter-spacing: -0.01em;
+    color: var(--text-heading);
+  }
+
+  .cd-body {
+    font-size: var(--cadence-type-body-size);
+    line-height: var(--cadence-type-body-line);
+    font-weight: var(--cadence-type-body-weight);
+    color: var(--text-primary);
+  }
+
+  .cd-bodyLg {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--text-primary);
+  }
+
+  @media (min-width: 640px) {
+    .cd-bodyLg {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+
+  .cd-sub {
+    font-size: var(--cadence-type-meta-size);
+    line-height: var(--cadence-type-meta-line);
+    font-weight: var(--cadence-type-meta-weight);
+    color: var(--text-secondary);
+  }
+
+  .cd-eyebrow {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+  }
+
+  .cd-label {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .cd-helper {
+    font-size: var(--cadence-type-meta-size);
+    line-height: var(--cadence-type-meta-line);
+    font-weight: var(--cadence-type-meta-weight);
+    color: var(--text-secondary);
+  }
+
+  .cd-heroKicker {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--text-secondary);
+  }
+
+  .cd-heroHeadline {
+    font-size: var(--cadence-type-h1-size);
+    line-height: var(--cadence-type-h1-line);
+    font-weight: var(--cadence-type-h1-weight);
+    letter-spacing: -0.02em;
+    color: var(--brand-primary);
+  }
+
+  .cd-formNote {
+    font-size: var(--cadence-type-meta-size);
+    line-height: var(--cadence-type-meta-line);
+    font-weight: 400;
+    color: var(--text-secondary);
+  }
+
+  .cd-cardTitle {
+    font-size: var(--cadence-type-h2-size);
+    line-height: var(--cadence-type-h2-line);
+    font-weight: var(--cadence-type-h2-weight);
+    color: var(--text-heading);
+  }
+
+  .cd-cardHelper {
+    font-size: var(--cadence-type-meta-size);
+    line-height: var(--cadence-type-meta-line);
+    font-weight: var(--cadence-type-meta-weight);
+    color: var(--text-secondary);
+  }
+
+  .cd-successTitle {
+    font-size: var(--cadence-type-h2-size);
+    line-height: var(--cadence-type-h2-line);
+    font-weight: var(--cadence-type-h2-weight);
+    color: var(--text-heading);
+  }
+
+  .cd-successBody {
+    font-size: var(--cadence-type-body-size);
+    line-height: var(--cadence-type-body-line);
+    font-weight: var(--cadence-type-body-weight);
+    color: var(--text-primary);
+  }
+
+  [data-cadence-surface="marketing"] .cd-h1 {
+    letter-spacing: -0.025em;
+  }
+
+  @media (min-width: 1024px) {
+    [data-marketing="true"] .mk-hero {
+      font-size: 72px;
+      line-height: 80px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    [data-marketing="true"] .mk-subhead {
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    [data-marketing="true"] .mk-form-title {
+      font-size: 32px;
+      line-height: 30px;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    [data-marketing="true"] .mk-chip {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+  }
+}
