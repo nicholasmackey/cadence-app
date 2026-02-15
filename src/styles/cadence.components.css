@@ -1,0 +1,153 @@
+@layer components {
+  .cd-page {
+    @apply min-h-screen bg-background px-4 py-10 sm:py-12;
+  }
+
+  .cd-wrap {
+    @apply mx-auto w-full max-w-5xl;
+  }
+
+  .cd-grid {
+    @apply grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,680px)_1fr] lg:gap-10;
+  }
+
+  .cd-left {
+    @apply flex flex-col gap-6;
+  }
+
+  .cd-right {
+    @apply hidden lg:block;
+  }
+
+  .cd-hero {
+    @apply w-full;
+  }
+
+  .cd-heroText {
+    @apply w-full space-y-3;
+  }
+
+  .cd-heroMark {
+    @apply flex items-center justify-start pt-2;
+  }
+
+  .cd-logoLockup {
+    @apply block h-9 w-auto sm:h-10;
+  }
+
+  .cd-formWrap {
+    @apply w-full;
+  }
+
+  .cd-formCard {
+    border-radius: var(--radius-md);
+    box-shadow: 0 1px 1px color-mix(in oklab, var(--text-primary) 2%, transparent);
+    @apply border-border/70 bg-card;
+  }
+
+  .cd-cardBody {
+    @apply p-6 sm:p-7;
+  }
+
+  .cd-cardHeader {
+    @apply space-y-2;
+    padding-bottom: 12px;
+    border-bottom: 1px solid color-mix(in oklab, var(--border), transparent 35%);
+  }
+
+  .cd-form {
+    @apply space-y-5;
+  }
+
+  .cd-form :is(input, textarea, select) {
+    font-size: 16px;
+    border-color: var(--border);
+  }
+
+  .cd-form :is(input, textarea, select):focus-visible {
+    outline: none;
+    border-color: color-mix(in oklab, var(--brand-primary), var(--border) 55%);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand-primary), transparent 85%);
+  }
+
+  .cd-field {
+    @apply space-y-2;
+  }
+
+  .cd-input {
+    @apply h-11;
+  }
+
+  .cd-actions {
+    @apply space-y-3;
+  }
+
+  .cd-submit {
+    @apply w-full;
+  }
+
+  .cd-primaryBtn {
+    height: 56px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0 18px;
+    transition: box-shadow 180ms ease, transform 180ms ease, background-color 180ms ease,
+      border-color 180ms ease;
+  }
+
+  .cd-primaryBtn:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 4px color-mix(in oklab, var(--brand-primary), transparent 85%),
+      var(--shadow-subtle);
+  }
+
+  .cd-primaryBtn:hover {
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .cd-formNote {
+    @apply text-left;
+    margin-top: 12px;
+  }
+
+  .cd-message {
+    min-height: 20px;
+  }
+
+  .cd-status {
+    min-height: 20px;
+    font-size: var(--cadence-type-meta-size);
+    line-height: var(--cadence-type-meta-line);
+    font-weight: var(--cadence-type-meta-weight);
+    @apply text-muted-foreground;
+  }
+
+  .cd-successWrap {
+    @apply space-y-3;
+  }
+
+  .cd-successLink {
+    @apply text-primary underline underline-offset-4;
+  }
+}
+
+@keyframes collapsible-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-collapsible-content-height);
+  }
+}
+
+@keyframes collapsible-up {
+  from {
+    height: var(--radix-collapsible-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
