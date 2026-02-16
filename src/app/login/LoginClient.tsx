@@ -5,8 +5,13 @@ import Image from 'next/image'
 import { useRouter, useSearchParams } from 'next/navigation'
 
 import { sendPasswordResetEmail, signInWithGoogle, signInWithPassword } from '@/lib/data/auth.repo'
-import { DEFAULT_POST_AUTH_PATH, toSafeInternalPath } from '@/lib/domain/auth'
+import {
+  DEFAULT_POST_AUTH_PATH,
+  toPasswordSignInErrorMessage,
+  toSafeInternalPath,
+} from '@/lib/domain/auth'
 import { createClient } from '@/lib/supabase/client'
+import { getSiteOrigin } from '@/lib/url/origin'
 import { GoogleIcon } from './_components/GoogleIcon'
 
 type SubmitState = 'idle' | 'submitting' | 'success' | 'error'
@@ -52,7 +57,7 @@ export default function LoginClient() {
     return normalized.includes('rate') || normalized.includes('too many')
   }
   const getCallbackRedirect = (next: string) => {
-    const redirectTo = new URL('/auth/callback', window.location.origin)
+    const redirectTo = new URL('/auth/callback', getSiteOrigin())
     redirectTo.searchParams.set('next', next)
     return redirectTo.toString()
   }
@@ -90,7 +95,7 @@ export default function LoginClient() {
 
     if (error) {
       setState('error')
-      setMessage(toAuthErrorMessage())
+      setMessage(toPasswordSignInErrorMessage(error))
       return
     }
 
@@ -108,7 +113,7 @@ export default function LoginClient() {
     setState('submitting')
     setMessage(null)
 
-    const redirectTo = new URL('/auth/callback', window.location.origin)
+    const redirectTo = new URL('/auth/callback', getSiteOrigin())
     redirectTo.searchParams.set('next', '/account')
 
     const supabase = createClient()

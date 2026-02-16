@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation'
 import { sendMagicLink } from '@/lib/data/auth.repo'
 import { LOGIN_PATH } from '@/lib/domain/auth'
 import { createClient } from '@/lib/supabase/client'
+import { getSiteOrigin } from '@/lib/url/origin'
 
 type SubmitState = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -43,7 +44,7 @@ export default function MagicLinkScreen({ initialEmail, nextPath }: MagicLinkScr
     setState('submitting')
     setMessage('')
 
-    const redirectTo = new URL('/auth/callback', window.location.origin)
+    const redirectTo = new URL('/auth/callback', getSiteOrigin())
     redirectTo.searchParams.set('next', nextPath)
 
     const supabase = createClient()
