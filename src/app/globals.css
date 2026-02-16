@@ -1,10 +1,6 @@
 @import 'tailwindcss';
-@import 'tw-animate-css';
-@import 'shadcn/tailwind.css';
 
-@custom-variant dark (&:is(.dark *));
-
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -50,6 +46,7 @@
   --cadence-blushed-brick: #b8504d;
   --cadence-smoky-rose: #7c616c;
   --cadence-brilliant-azure: #0085d9;
+  --cadence-brilliant-blue: #1e61db;
   --cadence-light-copper: #b38d7c;
   --cadence-rose-pink: #da5697;
   --cadence-inverse: #ffffff;
@@ -75,6 +72,7 @@
   --surface-primary: var(--cadence-bright-snow);
   --surface-secondary: var(--cadence-parchment);
   --surface-container: var(--cadence-khaki-beige);
+  --surface-login-button: #f3f3f3;
 
   --text-heading: var(--cadence-deep-space-blue);
   --text-primary: var(--cadence-carbon-black);
@@ -116,11 +114,11 @@
   --ring: var(--focus-ring-color);
 }
 
-[data-cadence-surface="marketing"] {
+[data-cadence-surface='marketing'] {
   --cadence-font-sans: var(--cadence-font-sans-marketing);
 }
 
-[data-marketing="true"] {
+[data-marketing='true'] {
   --cadence-font-sans-marketing: var(--font-source-sans);
   --cadence-font-sans: var(--cadence-font-sans-marketing);
   --marketing-card-bg: #ebeae9;
