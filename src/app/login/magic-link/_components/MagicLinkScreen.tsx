@@ -51,7 +51,9 @@ export default function MagicLinkScreen({ initialEmail, nextPath }: MagicLinkScr
 
     if (error) {
       setState('error')
-      setMessage(isEmailRateLimited(error.message) ? toEmailRateLimitMessage() : toAuthErrorMessage())
+      setMessage(
+        isEmailRateLimited(error.message) ? toEmailRateLimitMessage() : toAuthErrorMessage(),
+      )
       return
     }
 
@@ -73,7 +75,7 @@ export default function MagicLinkScreen({ initialEmail, nextPath }: MagicLinkScr
               alt="Cadence"
               width={320}
               height={90}
-              className="h-12 w-auto sm:h-14"
+              className="h-24 w-auto sm:h-28"
               priority
             />
           </div>
@@ -109,7 +111,10 @@ export default function MagicLinkScreen({ initialEmail, nextPath }: MagicLinkScr
                 Use a different login method
               </button>
 
-              <p className="min-h-[24px] text-center text-sm text-[var(--text-secondary)]" aria-live="polite" />
+              <p
+                className="min-h-[24px] text-center text-sm text-[var(--text-secondary)]"
+                aria-live="polite"
+              />
             </div>
           ) : (
             <form onSubmit={onSubmit} className="mt-7 space-y-4">
